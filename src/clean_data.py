@@ -10,3 +10,15 @@ PROCESSED_DIR.mkdir(
     parents=True,
     exist_ok=True
 )
+
+splits = ["train", "validation", "test"]
+
+for split in splits:
+
+    input_file = RAW_DIR / f"{split}.csv"
+
+    df = pd.read_csv(input_file)
+
+    print(f"Cleaning {split}...")
+
+    df["cleaned_text"] = df["text"].apply(clean_text)
