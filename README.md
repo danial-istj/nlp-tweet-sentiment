@@ -69,6 +69,9 @@ python -m src.download_data
 
 ## 6. Run Cleaning Pipeline
 
+# Download required NLTK data
+python -c "import nltk; nltk.download('stopwords')"
+
 python -m src.clean_data
 
 ## 7. Notebooks
@@ -89,7 +92,7 @@ Add all four members and their responsibilities.
 Muhammad Danial             L1F23BSCS1073
 Syed Muhammad Ali Hussain   L1F23BSCS1063
 Ali Haider                  L1F23BSCS1043
-Ayesha Mushtaq              L1F23BSCS0182
+Ayesha Mushtaq              L1F22BSCS0182
 
 ## 10. References and Acknowledgements
 
