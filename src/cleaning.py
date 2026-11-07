@@ -66,5 +66,14 @@ def clean_text(text):
         if token not in stop_words
     ]
 
+    
+    # 6. Stemming
+    tokens = [
+        stemmer.stem(token)
+        for token in tokens
+    ]
+
+    # 7. Final output
     return " ".join(tokens)
+
 
