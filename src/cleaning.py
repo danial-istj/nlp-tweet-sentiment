@@ -15,6 +15,15 @@ tokenizer = TweetTokenizer(
 stemmer = SnowballStemmer("english")
 
 
+# Load English stopwords
+stop_words = set(stopwords.words("english"))
+
+# Preserve words that can reverse or change sentiment
+negations = {"no", "not", "nor", "never", "n't"}
+
+stop_words = stop_words - negations
+
+
 
 def clean_text(text):
 
@@ -47,4 +56,15 @@ def clean_text(text):
     # Normalize whitespace
     text = re.sub(r"\s+", " ", text).strip()
 
-    return text
+    
+    # 4. Tokenization
+    tokens = tokenizer.tokenize(text)
+
+    # 5. Stopword removal
+    tokens = [
+        token for token in tokens
+        if token not in stop_words
+    ]
+
+    return " ".join(tokens)
+
