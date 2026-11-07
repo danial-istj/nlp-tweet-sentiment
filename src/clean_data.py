@@ -22,3 +22,18 @@ for split in splits:
     print(f"Cleaning {split}...")
 
     df["cleaned_text"] = df["text"].apply(clean_text)
+
+    output_file = (
+        PROCESSED_DIR / f"{split}_cleaned.csv"
+    )
+
+    df.to_csv(
+        output_file,
+        index=False,
+        encoding="utf-8"
+    )
+
+    print(f"Saved: {output_file}")
+    print(f"Documents: {len(df)}")
+
+print("All splits cleaned successfully!")
