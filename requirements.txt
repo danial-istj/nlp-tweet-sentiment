@@ -1,0 +1,9 @@
+datasets==3.6.0
+pandas>=2.2,<3
+numpy>=1.26,<3
+nltk>=3.9,<4
+spacy>=3.8,<4
+scikit-learn>=1.5,<2
+matplotlib>=3.8
+seaborn>=0.13
+jupyter
