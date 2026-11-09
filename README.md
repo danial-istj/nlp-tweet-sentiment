@@ -57,7 +57,9 @@ python -m venv .venv
 
 Activate:
 
-.venv\Scripts\activate
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+.venv\Scripts\Activate.ps1
 
 Install dependencies:
 
