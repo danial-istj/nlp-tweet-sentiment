@@ -58,6 +58,7 @@ python -m venv .venv
 Activate:
 
 .venv\Scripts\activate
+.venv\Scripts\Activate.ps1
 
 Install dependencies:
 
