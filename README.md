@@ -47,7 +47,7 @@ notebooks/
 src/
 reports/
 
-## 4. Environment Setup
+## 4. Environment Setup (Use Powershell terminal for Commands compatiblity)
 
 Python 3.11.9
 
@@ -57,7 +57,7 @@ python -m venv .venv
 
 Activate:
 
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser  ((if persmissions restricted))
 
 .venv\Scripts\Activate.ps1
 
