@@ -87,6 +87,12 @@ The processed dataset is saved in:
 
 data/processed/
 
+# Run representation & training scripts
+python src/features.py
+python src/word2vec_train.py
+python src/fasttext_train.py
+python src/bow_analysis.py
+
 ## 9. Team Members
 
 Add all four members and their responsibilities.
