@@ -20,4 +20,8 @@ def extract_tfidf_features(train_path="data/processed/train_cleaned.csv",
     X_val = vectorizer.transform(val_df["cleaned_text"])
     X_test = vectorizer.transform(test_df["cleaned_text"])
 
-   
+    # Ensure output directory exists
+    os.makedirs("data/processed", exist_ok=True)
+    os.makedirs("models", exist_ok=True)
+
+    
