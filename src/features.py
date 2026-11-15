@@ -24,4 +24,13 @@ def extract_tfidf_features(train_path="data/processed/train_cleaned.csv",
     os.makedirs("data/processed", exist_ok=True)
     os.makedirs("models", exist_ok=True)
 
-    
+    # Save vectorizer and feature matrices
+    joblib.dump(vectorizer, "models/tfidf_vectorizer.pkl")
+    joblib.dump((X_train, train_df["label"]), "data/processed/X_train_tfidf.pkl")
+    joblib.dump((X_val, val_df["label"]), "data/processed/X_val_tfidf.pkl")
+    joblib.dump((X_test, test_df["label"]), "data/processed/X_test_tfidf.pkl")
+
+    print(f"TF-IDF Extraction Complete! Train Shape: {X_train.shape}, Vocabulary Size: {len(vectorizer.vocabulary_)}")
+
+if __name__ == "__main__":
+    extract_tfidf_features()
