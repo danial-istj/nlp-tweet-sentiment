@@ -11,8 +11,6 @@ def train_fasttext():
         "data/processed/train_cleaned.csv"
     ).fillna("")
 
-    print("Training data loaded successfully!")
-
     sentences = [
         text.split()
         for text in train_df["cleaned_text"].tolist()
@@ -32,3 +30,26 @@ def train_fasttext():
         sg=1,
         epochs=10
     )
+
+    os.makedirs("models", exist_ok=True)
+
+    ft_model.save("models/fasttext_tweet.model")
+
+    print("fastText model saved successfully in models/")
+
+    
+    oov_word = "excitedd"
+
+    print(
+        f"Vector for OOV word '{oov_word}' generated via subwords:",
+        ft_model.wv[oov_word][:5]
+    )
+
+    print(
+        f"Most similar to '{oov_word}':",
+        ft_model.wv.most_similar(oov_word, topn=3)
+    )
+
+
+if __name__ == "__main__":
+    train_fasttext()
