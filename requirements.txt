@@ -7,3 +7,5 @@ scikit-learn>=1.5,<2
 matplotlib>=3.8
 seaborn>=0.13
 jupyter
+gensim>=4.3.0
+joblib>=1.2.0
