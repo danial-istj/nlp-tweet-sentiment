@@ -12,3 +12,11 @@ def train_fasttext():
     ).fillna("")
 
     print("Training data loaded successfully!")
+
+    sentences = [
+        text.split()
+        for text in train_df["cleaned_text"].tolist()
+        if text.strip()
+    ]
+
+    print(f"Total sentences for fastText training: {len(sentences)}")
