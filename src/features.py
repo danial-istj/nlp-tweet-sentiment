@@ -15,4 +15,9 @@ def extract_tfidf_features(train_path="data/processed/train_cleaned.csv",
     print("Initializing TF-IDF Vectorizer (ngram_range=(1, 3), max_features=10000)...")
     vectorizer = TfidfVectorizer(ngram_range=(1, 3), max_features=10000)
 
-    
+    # Fit and transform training text
+    X_train = vectorizer.fit_transform(train_df["cleaned_text"])
+    X_val = vectorizer.transform(val_df["cleaned_text"])
+    X_test = vectorizer.transform(test_df["cleaned_text"])
+
+   
