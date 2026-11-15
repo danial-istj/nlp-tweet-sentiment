@@ -5,4 +5,10 @@ from gensim.models import FastText
 
 
 def train_fasttext():
-    pass
+    print("Loading cleaned training data for fastText...")
+
+    train_df = pd.read_csv(
+        "data/processed/train_cleaned.csv"
+    ).fillna("")
+
+    print("Training data loaded successfully!")
