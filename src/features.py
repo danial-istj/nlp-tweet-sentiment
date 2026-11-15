@@ -11,4 +11,8 @@ def extract_tfidf_features(train_path="data/processed/train_cleaned.csv",
     val_df = pd.read_csv(val_path).fillna("")
     test_df = pd.read_csv(test_path).fillna("")
 
+    # Initialize TF-IDF Vectorizer with unigrams, bigrams, and trigrams
+    print("Initializing TF-IDF Vectorizer (ngram_range=(1, 3), max_features=10000)...")
+    vectorizer = TfidfVectorizer(ngram_range=(1, 3), max_features=10000)
+
     
