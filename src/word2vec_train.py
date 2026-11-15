@@ -23,4 +23,12 @@ def train_word2vec():
     skipgram_model.save("models/word2vec_skipgram.model")
     print("Word2Vec models saved successfully in models/")
 
-   
+    # Test similarity if vocabulary permits
+    test_word = "good"
+    if test_word in cbow_model.wv:
+        print(f"CBOW - Most similar to '{test_word}':", cbow_model.wv.most_similar(test_word, topn=3))
+    if test_word in skipgram_model.wv:
+        print(f"Skip-gram - Most similar to '{test_word}':", skipgram_model.wv.most_similar(test_word, topn=3))
+
+if __name__ == "__main__":
+    train_word2vec()
