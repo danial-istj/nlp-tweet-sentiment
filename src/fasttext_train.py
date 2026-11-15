@@ -22,14 +22,15 @@ def train_fasttext():
     print("Training fastText model (capturing subword structures)...")
 
     ft_model = FastText(
-        sentences=sentences,
-        vector_size=100,
-        window=5,
-        min_count=2,
-        workers=4,
-        sg=1,
-        epochs=10
-    )
+    sentences=sentences,
+    vector_size=100,
+    window=5,
+    min_count=2,
+    workers=4,
+    sg=1,
+    epochs=10,
+    bucket=200000
+)
 
     os.makedirs("models", exist_ok=True)
 
